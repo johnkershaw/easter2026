@@ -12,6 +12,7 @@ def draw_chick(x=0, y=0, w=100, h=100, colour='yellow'):
     
 
 def body(x, y, w, h):
+    t.seth(0)
     t.penup()
     t.goto(x, y)
     t.pendown()
@@ -21,6 +22,7 @@ def body(x, y, w, h):
     t.end_fill()
 
 def head(x, y, w, h, colour='yellow'):
+    t.seth(0)
     t.penup()
     t.goto(x, y)
     t.pendown()
@@ -30,10 +32,10 @@ def head(x, y, w, h, colour='yellow'):
     t.end_fill()
     
     # beak
+    t.seth(0)
     t.fillcolor('orange')
     t.penup()
     t.goto(x + w*0.4, y + h*0.8)
-    t.seth(0)
     t.pendown()
     t.begin_fill()
     t.forward(w * 0.6)
