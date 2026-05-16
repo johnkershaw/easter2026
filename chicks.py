@@ -4,6 +4,8 @@ WIDTH =  800
 HEIGHT = 400
 screen = turtle.Screen()
 screen.setup (WIDTH, HEIGHT)
+screen.tracer(0)
+
 t = turtle.Turtle()
 
 def draw_chick(x=0, y=0, w=100, h=100, colour='yellow'):
@@ -45,6 +47,7 @@ def head(x, y, w, h, colour='yellow'):
 draw_chick(0, 0, 50, 50)
 draw_chick(300, 0, 50, 50)
 draw_chick(-300, 0, 50, 50)
-t.hideturtle()
 
+t.hideturtle()
+screen.update()
 turtle.done()
