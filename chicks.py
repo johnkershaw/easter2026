@@ -8,7 +8,7 @@ t = turtle.Turtle()
 
 def draw_chick(x=0, y=0, w=100, h=100, colour='yellow'):
     body(x, y, w, h)
-    head(x + w/2, y + h/2, w/4, h/4)
+    head(x + w * 0.5, y + h * 0.8, w * 0.5, h * 0.5)
     
 
 def body(x, y, w, h):
@@ -17,35 +17,33 @@ def body(x, y, w, h):
     t.pendown()
     t.begin_fill()
     t.fillcolor('orange')
-    t.circle(40)
+    t.circle(w)
+    t.end_fill()
 
 def head(x, y, w, h, colour='yellow'):
     t.penup()
     t.goto(x, y)
     t.pendown()
-    t.begin_fill()
     t.fillcolor(colour)
-    t.circle(50)
-    t.penup()
-    t.goto(0, -50)
-    t.pendown()
-    t.end_fill()
-    
     t.begin_fill()
-    t.fillcolor()
-    t.circle(80)
+    t.circle(w)
     t.end_fill()
     
     # beak
-    t.begin_fill()
-    t.forward(x)
+    t.fillcolor('orange')
+    t.penup()
+    t.goto(x + w*0.4, y + h*0.8)
+    t.seth(0)
     t.pendown()
-    t.back(30)
-    t.forward(70)
-    t.seth(180)
+    t.begin_fill()
+    t.forward(w * 0.6)
+    t.left(120)
+    t.forward(w * 0.6)
     t.end_fill()
 
 draw_chick(0, 0, 50, 50)
-# draw_chick(100, 100, 50, 50)
-# draw_chick(-100, 100, 50, 50)
+draw_chick(300, 0, 50, 50)
+draw_chick(-300, 0, 50, 50)
+t.hideturtle()
+
 turtle.done()
