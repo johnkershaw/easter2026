@@ -7,17 +7,16 @@ screen.setup (WIDTH, HEIGHT)
 t = turtle.Turtle()
 
 def draw_chick(x=0, y=0, w=100, h=100, colour='yellow'):
-    body(x, y, w, h)
+    body(x, y, w, h, colour)
     head(x + w * 0.5, y + h * 0.8, w * 0.5, h * 0.5)
-    
 
-def body(x, y, w, h):
+def body(x, y, w, h, colour='yellow'):
     t.seth(0)
     t.penup()
     t.goto(x, y)
     t.pendown()
     t.begin_fill()
-    t.fillcolor('orange')
+    t.fillcolor(colour)
     t.circle(w)
     t.end_fill()
 
