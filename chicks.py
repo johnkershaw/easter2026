@@ -1,4 +1,5 @@
 import turtle 
+import random 
 
 WIDTH =  800
 HEIGHT = 400
@@ -44,9 +45,30 @@ def head(x, y, w, h, colour='yellow'):
     t.forward(w * 0.6)
     t.end_fill()
 
-draw_chick(0, 0, 50, 50)
-draw_chick(300, 0, 50, 50)
-draw_chick(-300, 0, 50, 50)
+def grass():
+    t.fillcolor("green")
+    t.goto(-WIDTH//2, -HEIGHT//2)
+    t.begin_fill()
+    t.seth(0)
+    t.forward(WIDTH)
+    t.left(90)
+    t.forward(HEIGHT//2)
+    t.left(90)
+    t.forward(WIDTH)
+    t.left(90)
+    t.forward(HEIGHT//2)
+    t.left(90)
+    t.end_fill()
+
+screen.bgcolor("#0FA0FF")
+grass()
+
+for i in range(50):
+    x = random.randint(-WIDTH//2, WIDTH//2)
+    y = random.randint(-HEIGHT//2, 0)
+    w = random.randint(WIDTH // 50, WIDTH // 10)
+    h = w
+    draw_chick(x, y, w, h)
 
 t.hideturtle()
 screen.update()
